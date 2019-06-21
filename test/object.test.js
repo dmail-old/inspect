@@ -161,7 +161,9 @@ import { inspect } from "../index.js"
   const object = Object.create(null)
   object[Symbol.toStringTag] = "stuff"
   const actual = inspect(object)
-  const expected = "{}"
+  const expected = `{
+  [Symbol("Symbol.toStringTag")]: "stuff"
+}`
   assert({ actual, expected })
 }
 
@@ -171,7 +173,16 @@ import { inspect } from "../index.js"
   object.foo = true
   const actual = inspect(object)
   const expected = `{
-  "foo": true
+  "foo": true,
+  [Symbol("Symbol.toStringTag")]: "stuff"
+}`
+  assert({ actual, expected })
+}
+
+{
+  const actual = inspect({ [Symbol()]: true })
+  const expected = `{
+  [Symbol()]: true
 }`
   assert({ actual, expected })
 }
