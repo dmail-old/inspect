@@ -16,7 +16,8 @@
       // https://github.com/Microsoft/vscode-chrome-debug-core/commit/eb552d621f1f6fbebcfca5d2390020dc7d8877e0#diff-b4f13aa3c326d081dea7875f9c0fe84aR31
       "skipFiles": [
         // force-multiline
-        "node_modules/**",
+        // "node_modules/**",
+        "node_modules/@babel/template/**",
         "<node_internals>/**/*.js"
       ]
     },
@@ -26,7 +27,7 @@
       "request": "launch",
       "protocol": "inspector",
       "program": "${workspaceFolder}/script/run-node/run-node.js",
-      "args": ["--file=${relativeFile}"],
+      "args": ["${relativeFile}"],
       "autoAttachChildProcesses": true,
       "sourceMaps": true,
       "sourceMapPathOverrides": {
@@ -36,6 +37,7 @@
       "skipFiles": [
         // force-multiline
         "node_modules/**",
+        "node_modules/@babel/template/**",
         "<node_internals>/**/*.js"
       ]
     },
