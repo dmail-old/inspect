@@ -1,11 +1,9 @@
 const { createConfig } = require("@jsenv/eslint-config")
 
-const config = createConfig()
-config.rules["import/no-absolute-path"] = ["off"]
-config.settings["import/resolver"] = {
-  [`${__dirname}/node_modules/@jsenv/eslint-import-resolver/dist/commonjs/main.js`]: {
-    projectPath: __dirname,
-  },
-}
+const config = createConfig({
+  importResolutionMethod: "import-map",
+  projectPath: __dirname,
+  jsxEnabled: true,
+})
 
 module.exports = config

@@ -20,6 +20,7 @@ import { inspect } from "../index.js"
 }
 
 {
+  // eslint-disable-next-line no-eval
   const actual = eval(inspect("don't"))
   const expected = "don't"
   assert({ actual, expected })
@@ -88,6 +89,7 @@ import { inspect } from "../index.js"
 }
 
 {
+  // eslint-disable-next-line no-eval
   const actual = eval(inspect("don't", { singleQuote: true }))
   const expected = "don't"
   assert({ actual, expected })

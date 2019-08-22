@@ -1,8 +1,9 @@
-/node_modules
-/package-lock.json
-/.dist
-/dist
-/coverage
-/importMap.json
-/env.json
+/.dist/
 /.vscode/settings.json
+/coverage/
+/dist/
+/node_modules/
+/env.json
+/importMap.json
+/jsconfig.json
+/package-lock.json
